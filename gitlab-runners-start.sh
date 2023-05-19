@@ -91,8 +91,9 @@ do
         --docker-image alpine:latest \
         --run-untagged="true" \
         --docker-privileged \
-        --docker-extra-hosts $EXTRA_HOSTS \
+        --docker-extra-hosts $EXTRA_HOST \
         --locked="false" \
+        --docker-disable-cache = "true" \
         --access-level="not_protected"
              
     docker exec -it gitlab-runner-$i gitlab-runner --debug verify \
